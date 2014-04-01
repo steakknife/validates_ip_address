@@ -1,3 +1,6 @@
+
+[![Build Status](https://api.travis-ci.org/steakknife/validates_ip_address.png?branch=master)](http://travis-ci.org/steakknife/validates_ip_address)
+
 # ValidatesIpAddress
 
 ## Usage
