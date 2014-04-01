@@ -1,5 +1,5 @@
 
-[![Build Status](https://api.travis-ci.org/steakknife/validates_ip_address.png?branch=master)](http://travis-ci.org/steakknife/validates_ip_address)
+[![Build Status](https://travis-ci.org/steakknife/validates_ip_address.svg)](https://travis-ci.org/steakknife/validates_ip_address)
 
 # ValidatesIpAddress
 
