@@ -1,10 +1,10 @@
 require 'ipaddr'
 
 class IpValidator < ActiveModel::EachValidator
-  if defined? IPAddr::InvalidAddressError
+  if defined? IPAddr::AddressFamilyError
     EXCEPTIONS = [ IPAddr::InvalidAddressError, IPAddr::AddressFamilyError ]
   else
-    EXCEPTIONS = [ IPAddr::AddressFamilyError ]
+    EXCEPTIONS = [ IPAddr::InvalidAddressError ]
   end
 
   def validate_each(record, attribute, value)
