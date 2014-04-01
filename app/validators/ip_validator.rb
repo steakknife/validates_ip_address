@@ -4,7 +4,7 @@ class IpValidator < ActiveModel::EachValidator
   if defined? IPAddr::InvalidAddressError
     EXCEPTIONS = [ IPAddr::InvalidAddressError, IPAddr::AddressFamilyError ]
   else
-    EXCEPTIONS = [ IPAddr::InvalidAddressError ]
+    EXCEPTIONS = [ IPAddr::AddressFamilyError ]
   end
 
   def validate_each(record, attribute, value)
