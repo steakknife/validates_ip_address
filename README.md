@@ -25,8 +25,8 @@
 
 ### manually
 
-    curl -L https://raw.githubusercontent.com/steakknife/validates_ip_address/master/gem-public_cert.pem | gem cert --add -
-    gem install validates_ip_address -p HighSecurity
+    gem cert --add <(curl -L https://raw.githubusercontent.com/steakknife/validates_ip_address/master/gem-public_cert.pem)
+    gem install validates_ip_address -P HighSecurity
 
 ## Author
 

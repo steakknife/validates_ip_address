@@ -4,4 +4,4 @@
 /vendor/bundle
 
 # gem
-/pkg/
+/*.gem
