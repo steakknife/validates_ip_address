@@ -1,5 +1,7 @@
+# bundler
 /.bundle/
-/log/*.log
-/pkg/
 /vendor/cache
 /vendor/bundle
+
+# gem
+/pkg/
