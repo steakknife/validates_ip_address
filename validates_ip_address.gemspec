@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,config,db,lib}/**/*', 'LICENSE', 'Rakefile', 'README.md']
   s.test_files = Dir['spec/**/*', '.rspec']
+  s.require_path = 'lib'
 
   s.add_dependency 'activemodel'
   s.add_development_dependency 'rake'
