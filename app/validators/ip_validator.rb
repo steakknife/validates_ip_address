@@ -1,8 +1,13 @@
 require 'ipaddr'
 
 class IpValidator < ActiveModel::EachValidator
+  if defined? IPAddr::InvalidAddressError
+    EXCEPTIONS = [ IPAddr::InvalidAddressError, IPAddr::AddressFamilyError ]
+  else
+    EXCEPTIONS = [ IPAddr::InvalidAddressError ]
+  end
+
   def validate_each(record, attribute, value)
-    #$stderr.puts "ip validating record=#{record} attribute=#{attribute} value=#{value} options=#{options}"
     ip = IPAddr.new(value)
     rng = ip.to_range
     result = true
@@ -17,11 +22,7 @@ class IpValidator < ActiveModel::EachValidator
 
     add_error(record, attribute, value) unless result
 
-  rescue IPAddr::InvalidAddressError
-    #$stderr.puts 'InvalidAddressError'
-    add_error(record, attribute, value)
-  rescue IPAddr::AddressFamilyError
-    #$stderr.puts 'AddressFamilyError'
+  rescue *EXCEPTIONS
     add_error(record, attribute, value)
   end
 
